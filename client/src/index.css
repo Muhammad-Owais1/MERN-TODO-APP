@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+/* font-['Anton_SC'] */
+/* font-["Montserrat"] */
 
 
 /* HTML: <div class="loader"></div> */
@@ -25,9 +32,28 @@
 
 body {
   height: 100vh;
-  overflow: hidden;
 }
 
 #root {
   height: 100%;
+  overflow: hidden;
 }
+
+.tile-underline {
+  width: 10px;
+  transition: 0.3s;
+}
+
+.tile:hover .tile-underline {
+  visibility: visible;
+  width: 100px;
+}
+
+/* nav div:hover {
+  color: #00ff00;
+} */
+
+nav div:hover .nav-underline{
+  background-color: #00ff00;
+}
+
