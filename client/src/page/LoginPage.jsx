@@ -5,8 +5,18 @@ export default function LoginPage() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleSubmit = () => {
-        
+    const handleSubmit = async () => {
+        fetch('http://localhost:3000/registeruser', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+            })
+        })
     }
     return (
         <div className='uppercase flex flex-col justify-center items-center gap-10'>
