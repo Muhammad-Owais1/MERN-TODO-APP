@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, } from 'react-router-dom'
 
 export default function Navbar() {
   let location = useLocation()
   return (
     <>
-      <nav className='sm:flex justify-center gap-5 px-10 hidden'>
+      <nav className='sm:flex justify-center gap-5 pb-2 px-10 hidden'>
         {
           [['Home', '/'], ['Tasks', '/tasks'], ['User', '/user'], ['Add Task', '/addtask'], ['More', '/more']].map((item, index) => (
             <div className={`cursor-pointer flex items-center justify-center ${location.pathname === item[1] ? 'text-orange-400 border-orange-400' : 'border-white text-white'} hover:text-orange-500 hover:border-orange-500 border-[1.5px] w-24 h-8 rounded-2xl`} key={index}>
