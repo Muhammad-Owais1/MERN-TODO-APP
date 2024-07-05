@@ -14,7 +14,7 @@ export default function Navbar() {
           ))
         }
       </nav>
-      <nav className='flex justify-around py-2 sm:hidden absolute bottom-0 z-20 bg-black w-full'>
+      <nav className='flex justify-around py-2 sm:hidden  fixed bottom-0 z-20  bg-black w-full'>
         {
           [['fa-list-check', '/tasks'], ['fa-plus', '/more'], ['fa-house', '/'], ['fa-circle-info', '/more'], ['fa-user', '/user']].map((item, index) => (
             <div className='cursor-pointer flex items-center justify-center flex-col text-white  w-8 h-8 pt-1 rounded-2xl ' key={index}>
