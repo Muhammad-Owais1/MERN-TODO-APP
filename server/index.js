@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
-import mongoose from 'mongoose'
+import mongoose, { mongo } from 'mongoose'
 import "dotenv/config";
 
 import routes from './src/routes/index.js'
@@ -18,6 +18,7 @@ app.use(express.json())
 
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.8xt5rus.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`)
+// mongoose.connect('mongodb://localhost:2000')
 
 
 mongoose.connection.on("connected", () => {
