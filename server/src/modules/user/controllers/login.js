@@ -2,11 +2,11 @@ import loginUser from "../services/login.js"
 
 const loginController = async (req, res) => {
     try {
-        const user = await loginUser(req.body)
+        const user = await loginUser(req.query)
         
         if(user) {
             res.status(200).send({
-                req: req.body,
+                req: req.query,
                 status: 200,
                 message: "Login successfully",
                 loginUser: user
@@ -15,7 +15,7 @@ const loginController = async (req, res) => {
         }
         else {
             res.status(401).send({
-                req: req.body,
+                req: req.query,
                 status: 401,
                 message: 'Wrong email or password'
             })
@@ -24,7 +24,7 @@ const loginController = async (req, res) => {
     }
     catch(error) {
         res.status(500).send({
-            req: req.body,
+            req: req.query,
             status: 500,
             message: "Internal server error"
         })

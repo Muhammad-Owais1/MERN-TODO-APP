@@ -9,7 +9,6 @@ export default function SignupPage() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors, isSubmitting },
     } = useForm()
 
@@ -31,14 +30,11 @@ export default function SignupPage() {
         })
         const response = await res.json()
         await delay(2)
-        console.log(response)
+        console.log(response, data)
         setResponse(response)
     }   
 
-    // const handleSubmi = async () => {
 
-  
-    // }
     return (
         <div >
             {isSubmitting ?
