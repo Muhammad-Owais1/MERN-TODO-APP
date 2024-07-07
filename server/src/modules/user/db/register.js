@@ -3,7 +3,7 @@ import Model from '../models/index.js'
 
 const addData = (data) => {
     try {
-        return new Model(data).save()
+        return  Model(data).save()
     }
     catch(error) {
         console.log(error)
@@ -11,6 +11,4 @@ const addData = (data) => {
 }
 
 
-export {
-    addData
-}
+export default addData
