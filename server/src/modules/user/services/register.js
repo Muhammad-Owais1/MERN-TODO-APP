@@ -1,4 +1,4 @@
-import addData  from '../db/index.js'
+import {addData}  from '../db/index.js'
 import bcrypt from 'bcrypt'
 
 const registerUser = async (data) => {

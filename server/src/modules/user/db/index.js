@@ -1,5 +1,6 @@
 import Model from '../models/index.js'
 
+
 const addData = (data) => {
     try {
         return new Model(data).save()
@@ -9,4 +10,7 @@ const addData = (data) => {
     }
 }
 
-export default addData
+
+export {
+    addData
+}

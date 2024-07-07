@@ -9,7 +9,6 @@ import routes from './src/routes/index.js'
 const app = express()
 const port = 3000
 
-const arr = []
 
 app.use(cors())
 app.use(helmet())
@@ -39,14 +38,7 @@ app.get('/', (req, res) => {
 app.use('/api', routes)
 
 
-app.get('/getuser', (req, res) => {
-    try {
-        res.send(arr)
-    }
-    catch (err) {
-        console.log(err)
-    }
-})
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
