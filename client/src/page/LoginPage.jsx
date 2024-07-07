@@ -49,7 +49,7 @@ export default function LoginPage() {
                         <h1 className='text-center pt-20 pb-2 font-["Montserrat"] font-semibold text-4xl '>login</h1>
                         <input {...register('email')} className='shadow-lg border-black border-2 h-10 w-52 px-2 font-["Montserrat"]' type="email" placeholder='Email' />
                         <input {...register('password')} className='shadow-lg border-black border-2 h-10 w-52 px-2 font-["Montserrat"]' type="password" placeholder='Password' />
-                        <div className='flex justify-center items-center gap-2 '>
+                        <div className='flex justify-center items-center gap-5 '>
                             <button className='border-black border-2 h-10 w-[80px] rounded-3xl font-["Montserrat"]'><Link className='h-full w-full ' to="/user">Back</Link></button>
                             <button type='submit' className={` border-black border-2 h-10 w-[80px] rounded-3xl font-["Montserrat"] `}>Submit</button>
                         </div>

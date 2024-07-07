@@ -3,7 +3,7 @@ const getTime = () => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const padZero = (num) => num.toString().padStart(2, '0')
     const times = {
-        day: days[new Date().getDate()],
+        day: days[new Date().getDay()],
         date: padZero(new Date().getDate()),
         month: months[new Date().getMonth()],
         year: new Date().getFullYear(),
