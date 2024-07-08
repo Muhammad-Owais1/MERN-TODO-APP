@@ -23,13 +23,12 @@ export default function LoginPage() {
 
     const onSubmit = async (data) => {
         // const queryParams = new URLSearchParams(data).toString();
-        const res = await fetch(`http://localhost:3000/api/user`, {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json",
-                "email": data.email,
-                "password": data.password
+        const res = await fetch('http://localhost:3000/api/user/login', {
+            method: 'POST',
+            headers:{
+                "Content-Type" : "application/json"
             },
+            body: JSON.stringify(data)
         })
         const response = await res.json()
         await delay(2)

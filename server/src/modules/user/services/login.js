@@ -1,14 +1,26 @@
 import getData from '../db/login.js'
 import bcrypy from 'bcrypt'
+import jwt from 'jsonwebtoken'
+import "dotenv/config"
 
 const loginUser = async (data) => {
     try {
         const user = await getData(data.email) 
-    
+        
+        
         const isPasswordCorrect = bcrypy.compareSync(data.password, user.password)
-
+        
         if (isPasswordCorrect) {
-            return user
+            var token = jwt.sign({ email: user.email }, process.env.JWT_SECRET)
+
+            // return {
+            //     ...user,
+            //     token: token
+            // }
+            return {
+                user,
+                token: token
+            }
         }
     }
     catch(error) {
