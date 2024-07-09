@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
 export default function LoginPage() {
 
     const [response, setResponse] = useState('')
+    const navigate = useNavigate()
 
     const {
         register,
@@ -35,6 +36,7 @@ export default function LoginPage() {
         console.log(data)
         setResponse(response)
         localStorage.setItem("token", response.token)
+        navigate('/protected')
     }
 
     return (
