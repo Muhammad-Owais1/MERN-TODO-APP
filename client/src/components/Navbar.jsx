@@ -31,7 +31,7 @@ export default function Navbar() {
           {
             [
               ['fa-list-check', '/tasks'],
-              ['fa-plus', '/more'],
+              ['fa-plus', '/addtask'],
               ['fa-house', '/'],
               ['fa-circle-info', '/more'],
               ['fa-user', '/user']

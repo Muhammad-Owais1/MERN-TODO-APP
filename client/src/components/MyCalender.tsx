@@ -16,7 +16,7 @@ export default function MyCalender() {
   }
 
   return (
-    <div>
+    <div className='sm:mb-0 mb-20'>
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -26,8 +26,8 @@ export default function MyCalender() {
           }
           .react-calendar {
             border: none; /* Remove default border */
-            max-width: 100%; /* Ensure calendar width is responsive */
-
+            
+            max-width: 450px !important;
           }
           .react-calendar__month-view__days__day {
             border-top: 1px solid lightgrey !important; /* Horizontal lines */
@@ -94,6 +94,10 @@ export default function MyCalender() {
           }
           .react-calendar__month-view__weekdays__weekday abbr {
              text-decoration: none;
+          }
+          .react-calendar__navigation__label {
+            pointer-events: none !important;
+            cursor: not-allowed !important;
           }
         `}
       </style>
