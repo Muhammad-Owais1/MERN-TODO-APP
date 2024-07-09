@@ -3,7 +3,7 @@ import MyCalender from '../components/MyCalender'
 
 export default function AddTaskPage() {
   return (
-    <div className='h-full'>
+    <div className='page h-full flex justify-around items-center'>
       <MyCalender />
     </div>
   )

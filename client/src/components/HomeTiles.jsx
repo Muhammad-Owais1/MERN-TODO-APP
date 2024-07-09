@@ -7,7 +7,7 @@ import Img4 from '../imgs/img4.jpg'
 
 export default function HomeTiles() {
     return (
-        <div className='flex justify-center gap-16 flex-wrap pt-10 pb-52'>
+        <div className='flex justify-center gap-16 flex-wrap '>
             <div className='flex justify-evenly flex-wrap gap-16'>
                 {
                     ['Learnings', 'Achivements'].map((item, index) => (

@@ -4,7 +4,7 @@ import UserButtons from '../components/UserButtons'
 
 export default function UserPage() {
     return (
-        <div className='bg-slate-900 h-full'>
+        <div className='page bg-slate-900 h-full'>
             <UserInfo />
             <UserButtons />
         </div>

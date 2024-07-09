@@ -36,7 +36,7 @@ export default function SignupPage() {
 
 
     return (
-        <div >
+        <div className='page'>
             {isSubmitting ?
                <div className='flex items-center justify-center'>
                    <h1 className='font-["Montserrat"] font-semibold text-4xl mt-52'>Loading...</h1>

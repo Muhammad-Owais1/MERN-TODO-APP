@@ -29,14 +29,8 @@ function App() {
           :
           <>
             <BrowserRouter>
-              <header className="flex flex-col items-center  bg-slate-900">
 
-                <h1 className="py-2 px-10 text-left sm:text-center text-[30px] font-['Anton_SC'] font-medium text-yellow-400 w-full ">
-                  TODO APP
-                </h1>
-
-                <Navbar />
-              </header>
+              <Navbar />
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/tasks' element={<TaskPage />} />

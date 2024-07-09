@@ -40,7 +40,7 @@ export default function LoginPage() {
     }
 
     return (
-        <div >
+        <div className='page'>
             <div >
                 {isSubmitting ?
                     <div className='flex items-center justify-center'>
