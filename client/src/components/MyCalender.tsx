@@ -27,7 +27,7 @@ export default function MyCalender() {
           .react-calendar {
             border: none; /* Remove default border */
             
-            max-width: 450px !important;
+            width: 40vw !important;
           }
           .react-calendar__month-view__days__day {
             border-top: 1px solid lightgrey !important; /* Horizontal lines */
@@ -93,11 +93,16 @@ export default function MyCalender() {
             color: grey !important;
           }
           .react-calendar__month-view__weekdays__weekday abbr {
-             text-decoration: none;
+            text-decoration: none;
           }
           .react-calendar__navigation__label {
             pointer-events: none !important;
             cursor: not-allowed !important;
+          }
+          @media (max-width: 640px) {
+            .react-calendar {
+              width: 90vw !important;
+            }
           }
         `}
       </style>
