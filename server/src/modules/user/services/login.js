@@ -17,6 +17,7 @@ const loginUser = async (data) => {
             //     ...user,
             //     token: token
             // }
+            
             return {
                 user,
                 token: token

@@ -4,14 +4,13 @@ const loginController = async (req, res) => {
     try {
         const user = await loginUser(req.body)
         
-        if(user) {
+        if(user) {  
             res.status(200).send({
                 req: req.body,
                 status: 200,
                 message: "Login successfully",
                 loginUser: user.user,
-                token: user.token,
-                tokenTest: req.headers
+                token: user.token
             })
             // console.log(req.headers)
         }

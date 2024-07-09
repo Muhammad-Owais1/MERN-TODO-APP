@@ -22,7 +22,6 @@ export default function LoginPage() {
     }
 
     const onSubmit = async (data) => {
-        // const queryParams = new URLSearchParams(data).toString();
         const res = await fetch('http://localhost:3000/api/user/login', {
             method: 'POST',
             headers:{
@@ -35,6 +34,7 @@ export default function LoginPage() {
         console.log(response)
         console.log(data)
         setResponse(response)
+        localStorage.setItem("token", response.token)
     }
 
     return (
