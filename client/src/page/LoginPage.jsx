@@ -57,6 +57,7 @@ export default function LoginPage() {
                             <button type='submit' className={` border-black border-2 h-10 w-[80px] rounded-3xl font-["Montserrat"] `}>Submit</button>
                         </div>
                         <p className={`font-semibold text-xs ${response.status == 200 ? 'text-green-600' : 'text-red-600'}`}>{response.message}</p>
+                    
                     </form>
                 }
             </div>

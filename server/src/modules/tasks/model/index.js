@@ -10,6 +10,13 @@ const dataSchema = new Schema({
         enum: ["incomplete", "complete"],
         default: "incomplete"
     },
+    date: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String
+    }
     // user: {
     //     type: mongoose.Schema.ObjectId,
     //     ref: "User"
