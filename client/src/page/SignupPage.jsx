@@ -62,7 +62,7 @@ export default function SignupPage() {
             placeholder="Password"
           />
           <div className="flex justify-center items-center gap-5 ">
-            <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] uppercase text-xs]'>
+            <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] text-xs'>
               <Link className="h-full w-full " to="/user">
                 Back
               </Link>
@@ -70,7 +70,7 @@ export default function SignupPage() {
             <button
               type="submit"
               className={
-                'h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] uppercase text-xs] '
+                'h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] text-xs '
               }
             >
               Signup

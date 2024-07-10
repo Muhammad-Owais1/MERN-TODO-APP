@@ -8,7 +8,7 @@ export default function UserButtons() {
         Login And Start Using
       </h1>
       <div className=" flex flex-wrap justify-center items-center gap-10">
-        <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] uppercase text-xs  '>
+        <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"]  text-xs  '>
           <Link
             className="h-full w-full flex justify-center items-center"
             to="/user/login"
@@ -16,7 +16,7 @@ export default function UserButtons() {
             login
           </Link>
         </button>
-        <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] uppercase text-xs  '>
+        <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"]  text-xs  '>
           <Link
             className="h-full w-full flex justify-center items-center"
             to="/user/signup"

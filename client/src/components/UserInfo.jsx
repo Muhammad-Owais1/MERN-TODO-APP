@@ -27,7 +27,7 @@ export default function UserInfo({ user }) {
       <p>{user.email}</p>
       <button
         onClick={handleLogout}
-        className="'h-10 w-24 border-2 border-black rounded-3xl font-['Montserrat'] uppercase text-xs"
+        className="h-10 w-24 border-2 border-black rounded-3xl font-['Montserrat'] text-xs"
       >
         Logout
       </button>

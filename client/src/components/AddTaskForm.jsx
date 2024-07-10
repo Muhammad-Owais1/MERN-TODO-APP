@@ -71,7 +71,7 @@ export default function AddTaskForm() {
       />
       <textarea
         {...register("description")}
-        className='resize-none focus:outline-none border-b-[1px] border-r-[1px] border-gray-950 h-48 w-[90%] font-["Montserrat"] px-1'
+        className='resize-none focus:outline-none border-b-[1px] border-r-[1px] border-gray-950 h-40 w-[90%] font-["Montserrat"] px-1'
         placeholder="Description"
         maxLength="400"
       ></textarea>
@@ -83,7 +83,7 @@ export default function AddTaskForm() {
         {response.message}
       </p>
       <button
-        className={`order-[1px] w-16 h-10 border-[1px] ${
+        className={`w-16 h-10 border-[1px] ${
           isSubmitting || !isFormValid
             ? "border-gray-600 text-gray-600"
             : "border-gray-950 text-black"
