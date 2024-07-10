@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/auth/authSlice.js";
 
 export default function LoginPage() {
   const [response, setResponse] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -33,8 +36,12 @@ export default function LoginPage() {
     console.log(response);
     console.log(data);
     setResponse(response);
-    localStorage.setItem("token", response.token);
-    navigate("/protected");
+    if (response.status == 200) {
+      dispatch(login({ user: response.loginUser, token: response.token }));
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("user", JSON.stringify(response.loginUser));
+      navigate("/protected");
+    }
   };
 
   return (

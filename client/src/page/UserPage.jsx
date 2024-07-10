@@ -1,12 +1,14 @@
-import React from 'react'
-import UserInfo from '../components/UserInfo'
-import UserButtons from '../components/UserButtons'
+import React from "react";
+import UserInfo from "../components/UserInfo";
+import UserButtons from "../components/UserButtons";
+import { useSelector } from "react-redux";
 
 export default function UserPage() {
-    return (
-        <div className='page bg-slate-900 h-full'>
-            <UserInfo />
-            <UserButtons />
-        </div>
-    )
+  const user = useSelector((state) => state.auth.user);
+  console.log(user);
+  return (
+    <div className="page flex flex-col gap-4 items-center justify-center">
+      {user ? <UserInfo user={user} /> : <UserButtons />}
+    </div>
+  );
 }

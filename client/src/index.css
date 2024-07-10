@@ -58,7 +58,8 @@ body {
 
 @media (max-width: 640px) {
   .page {
-    height: auto;
+    height: calc(100vh - 61px);
+    
   }
 }
 

@@ -44,7 +44,7 @@ export default function AddTaskForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full sm:w-[50vw] h-full flex flex-col items-center justify-center gap-4 "
+      className="w-full sm:w-[50vw] h-full flex flex-col items-center justify-center sm:gap-4 gap-10 "
     >
       <input
         {...register("task", { required: true })}
@@ -75,7 +75,13 @@ export default function AddTaskForm() {
         placeholder="Description"
         maxLength="400"
       ></textarea>
-      <p>{response.message}</p>
+      <p
+        className={`${
+          response.status == 201 ? "text-green-600" : "text-red-500"
+        } text-sm`}
+      >
+        {response.message}
+      </p>
       <button
         className={`order-[1px] w-16 h-10 border-[1px] ${
           isSubmitting || !isFormValid

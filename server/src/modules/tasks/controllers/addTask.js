@@ -5,7 +5,7 @@ const addTaskController = async (req, res) => {
         await addUserTask(req.body)
         res.status(201).send({
             req: req.body,
-            message: "Task added successfully",
+            message: "Task added successfully.",
             status: 201
         })
     }
@@ -13,7 +13,7 @@ const addTaskController = async (req, res) => {
         console.log(error)
         res.status(500).send({
             req: req.body,
-            message: "Cannot add task",
+            message: "Cannot add task.",
             status: 500
         })
     }
