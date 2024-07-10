@@ -40,7 +40,7 @@ export default function LoginPage() {
       dispatch(login({ user: response.loginUser, token: response.token }));
       localStorage.setItem("token", response.token);
       localStorage.setItem("user", JSON.stringify(response.loginUser));
-      navigate("/user");
+      navigate(`/user/${response.loginUser._id}`);
     }
   };
 

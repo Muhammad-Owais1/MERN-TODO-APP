@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function UserButtons() {
   return (
     <>
-      <h1 className='text-center pt-28 pb-10 font-["Montserrat"] font-semibold text-4xl '>
+      <h1 className='text-center font-["Montserrat"] font-semibold text-4xl '>
         Login And Start Using
       </h1>
       <div className=" flex flex-wrap justify-center items-center gap-10">

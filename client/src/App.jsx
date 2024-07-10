@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoadingPage from "./page/LoadingPage";
 import Home from "./page/Home";
 import Navbar from "./components/Navbar";
@@ -8,11 +8,10 @@ import AddTaskPage from "./page/AddTaskPage";
 import UserPage from "./page/UserPage";
 import LoginPage from "./page/LoginPage";
 import SignupPage from "./page/SignupPage";
-import ProtectedPage from "./page/ProtectedPage"
+import UserInfo from "./components/UserInfo";
 
 function App() {
   const [showLoading, setShowLoading] = useState(true);
-
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -24,26 +23,24 @@ function App() {
 
   return (
     <>
-      {
-        showLoading ? <LoadingPage />
-          :
-          <>
-            <BrowserRouter>
-
-              <Navbar />
-              <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/tasks' element={<TaskPage />} />
-                <Route path='/addtask' element={<AddTaskPage />} />
-                <Route path='/user' element={<UserPage />} />
-                <Route path='/user/login' element={<LoginPage />} />
-                <Route path='/user/signup' element={<SignupPage />} />
-                <Route path="/protected" element={<ProtectedPage />} />
-              </Routes>
-            </BrowserRouter>
-          </>
-      }
-
+      {showLoading ? (
+        <LoadingPage />
+      ) : (
+        <>
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/tasks" element={<TaskPage />} />
+              <Route path="/addtask" element={<AddTaskPage />} />
+              <Route path="/user" element={<UserPage />} />
+              <Route path="/user/:userId" element={<UserPage />} />
+              <Route path="/user/login" element={<LoginPage />} />
+              <Route path="/user/signup" element={<SignupPage />} />
+            </Routes>
+          </BrowserRouter>
+        </>
+      )}
     </>
   );
 }
