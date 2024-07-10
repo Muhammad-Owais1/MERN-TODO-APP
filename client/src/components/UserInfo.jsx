@@ -3,7 +3,7 @@ import React from "react";
 export default function UserInfo({ user }) {
   const userName = user.email.split("@")[0];
   return (
-    <div className="font-['Montserrat'] ">
+    <div className="font-['Montserrat'] flex items-center justify-center gap-5 flex-col">
       <h1 className="font-semibold text-[50px]">
         Wellcome {userName.charAt(0).toUpperCase() + userName.slice(1)}
       </h1>
