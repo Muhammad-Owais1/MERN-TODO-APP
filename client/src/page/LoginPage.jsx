@@ -74,16 +74,16 @@ export default function LoginPage() {
               placeholder="Password"
             />
             <div className="flex justify-center items-center gap-5 ">
-              <button className='border-black border-2 h-10 w-[80px] rounded-3xl font-["Montserrat"]'>
+              <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] uppercase text-xs'>
                 <Link className="h-full w-full " to="/user">
                   Back
                 </Link>
               </button>
               <button
                 type="submit"
-                className={` border-black border-2 h-10 w-[80px] rounded-3xl font-["Montserrat"] `}
+                className={`h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] uppercase text-xs `}
               >
-                Submit
+                Login
               </button>
             </div>
             <p
