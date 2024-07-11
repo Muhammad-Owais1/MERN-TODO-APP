@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-export default function AddTaskForm() {
+export default function AddTaskForm({ user }) {
   const [response, setResponse] = useState("");
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ export default function AddTaskForm() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, user: user._id }),
     });
     const response = await res.json();
     await delay(2);
