@@ -75,7 +75,10 @@ export default function LoginPage() {
             />
             <div className="flex justify-center items-center gap-5 ">
               <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] text-xs'>
-                <Link className="h-full w-full " to="/user">
+                <Link
+                  className="h-full w-full flex items-center justify-center "
+                  to="/user"
+                >
                   Back
                 </Link>
               </button>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/auth/authSlice.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function UserInfo({ user }) {
   const dispatch = useDispatch();
@@ -25,12 +25,22 @@ export default function UserInfo({ user }) {
         Wellcome {userName.charAt(0).toUpperCase() + userName.slice(1)}
       </h1>
       <p>{user.email}</p>
-      <button
-        onClick={handleLogout}
-        className="h-10 w-24 border-2 border-black rounded-3xl font-['Montserrat'] text-xs"
-      >
-        Logout
-      </button>
+      <div className="flex items-center justify-center gap-6">
+        <button className="h-10 w-24 border-2 border-black rounded-3xl font-['Montserrat'] text-xs">
+          <Link
+            to="/"
+            className="h-full w-full flex items-center justify-center"
+          >
+            Home
+          </Link>
+        </button>
+        <button
+          onClick={handleLogout}
+          className="h-10 w-24 border-2 border-black rounded-3xl font-['Montserrat'] text-xs"
+        >
+          Logout
+        </button>
+      </div>
     </div>
   );
 }

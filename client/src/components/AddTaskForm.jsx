@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export default function AddTaskForm() {
   const [response, setResponse] = useState("");
+  const navigate = useNavigate();
 
   const {
     register,
@@ -34,6 +36,9 @@ export default function AddTaskForm() {
     console.log(response);
     console.log(data);
     setResponse(response);
+    if (response.status == 403) {
+      navigate("/user/login");
+    }
   };
 
   const task = watch("task");

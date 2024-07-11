@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 import LoadingPage from "./page/LoadingPage";
 import Home from "./page/Home";
 import Navbar from "./components/Navbar";
@@ -12,6 +13,8 @@ import UserInfo from "./components/UserInfo";
 
 function App() {
   const [showLoading, setShowLoading] = useState(true);
+
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -33,8 +36,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/tasks" element={<TaskPage />} />
               <Route path="/addtask" element={<AddTaskPage />} />
-              <Route path="/user" element={<UserPage />} />
-              <Route path="/user/:userId" element={<UserPage />} />
+              if (!user) {<Route path="/user" element={<UserPage />} />}
+              <Route path={`/user/${user?._id}`} element={<UserPage />} />
               <Route path="/user/login" element={<LoginPage />} />
               <Route path="/user/signup" element={<SignupPage />} />
             </Routes>

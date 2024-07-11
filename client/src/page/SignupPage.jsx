@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 export default function SignupPage() {
   const [response, setResponse] = useState("");
+  const navigate = useNavigate();
 
   const {
     register,
@@ -32,6 +33,12 @@ export default function SignupPage() {
     console.log(response, data);
     setResponse(response);
   };
+
+  if (response.status == 201) {
+    setTimeout(() => {
+      navigate("/user/login");
+    }, 2000);
+  }
 
   return (
     <div className="page">
@@ -63,7 +70,10 @@ export default function SignupPage() {
           />
           <div className="flex justify-center items-center gap-5 ">
             <button className='h-10 w-24 border-2 border-black rounded-3xl font-["Montserrat"] text-xs'>
-              <Link className="h-full w-full " to="/user">
+              <Link
+                className="h-full w-full flex items-center justify-center "
+                to="/user"
+              >
                 Back
               </Link>
             </button>
