@@ -1,12 +1,11 @@
-import Model from '../model/index.js'
+import Model from "../model/index.js";
 
-const addTask = (task) => {
-    try {
-        return Model(task).save()
-    }
-    catch(error) {
-        console.log(error)
-    }
-}
+const addTask = async (task) => {
+  try {
+    return await Model(task).save();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-export default addTask
+export default addTask;
