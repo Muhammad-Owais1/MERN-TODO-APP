@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import getTime from "../helper/getTime";
 
 export default function AddTaskForm({ user }) {
   const [response, setResponse] = useState("");
@@ -21,6 +22,10 @@ export default function AddTaskForm({ user }) {
     });
   };
 
+  const { hour, minute, day, date, month, year, ampm } = getTime();
+
+  const time = `${hour}:${minute} ${ampm}`;
+
   const onSubmit = async (data) => {
     const token = localStorage.getItem("token");
     const res = await fetch("http://localhost:3000/api/task/addtask", {
@@ -29,7 +34,15 @@ export default function AddTaskForm({ user }) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ ...data, user: user._id }),
+      body: JSON.stringify({
+        ...data,
+        user: user._id,
+        time: time,
+        date: date,
+        day: day,
+        month: month,
+        year: year,
+      }),
     });
     const response = await res.json();
     await delay(2);
@@ -42,9 +55,8 @@ export default function AddTaskForm({ user }) {
   };
 
   const task = watch("task");
-  const date = watch("date");
 
-  const isFormValid = task && date;
+  const isFormValid = task;
 
   return (
     <form
@@ -69,11 +81,11 @@ export default function AddTaskForm({ user }) {
           Complete
         </option>
       </select>
-      <input
+      {/* <input
         {...register("date", { required: true })}
         type="date"
         className='bg-white focus:outline-none border-b-[1px] border-gray-950 h-8 w-[90%] font-["Montserrat"] px-1'
-      />
+      /> */}
       <textarea
         {...register("description")}
         className='resize-none focus:outline-none border-b-[1px] border-r-[1px] border-gray-950 h-40 w-[90%] font-["Montserrat"] px-1'

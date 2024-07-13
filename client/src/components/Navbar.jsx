@@ -9,12 +9,12 @@ export default function Navbar() {
   const userLink = user ? `/user/${user._id}` : "/user";
   return (
     <>
-      <header className="flex flex-col items-center bg-slate-900 ">
+      <header className="flex flex-col items-center bg-slate-900">
         <h1 className="py-2 px-10 text-left sm:text-center text-[30px] font-['Anton_SC'] font-medium text-yellow-400 w-screen ">
           TODO APP
         </h1>
 
-        <nav className="sm:flex justify-center gap-5 pb-2 px-10 hidden ">
+        <nav className="sm:flex justify-center gap-5 pb-2 fixed px-10 hidden">
           {[
             ["Home", "/"],
             ["Tasks", "/tasks"],

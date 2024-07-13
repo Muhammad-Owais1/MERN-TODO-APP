@@ -10,12 +10,28 @@ const dataSchema = new Schema({
     enum: ["incomplete", "complete"],
     default: "incomplete",
   },
+  description: {
+    type: String,
+  },
   date: {
     type: String,
     required: true,
   },
-  description: {
+  time: {
     type: String,
+    required: true,
+  },
+  day: {
+    type: String,
+    required: true,
+  },
+  month: {
+    type: String,
+    required: true,
+  },
+  year: {
+    type: String,
+    required: true,
   },
   user: {
     type: Schema.Types.ObjectId,
