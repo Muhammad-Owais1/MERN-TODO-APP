@@ -50,6 +50,15 @@ export default function TaskPage() {
     "bg-indigo-400",
   ];
 
+  const mobileBgColors = [
+    "bg-orange-400",
+    "bg-blue-400",
+    "bg-green-400",
+    "bg-purple-400",
+    "bg-red-400",
+    "bg-indigo-400",
+  ];
+
   if (data.tasks?.length === 0) {
     return (
       <div className="page flex items-center justify-center flex-col gap-10">
@@ -71,34 +80,59 @@ export default function TaskPage() {
     );
   }
   return (
-    <div className="page h-full">
-      <div className="flex flex-col gap-5 pl-20">
-        {data.tasks?.map((item, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-start gap-5 w-full"
-          >
-            <p className="font-['Montserrat'] w-20">{item.time}</p>
+    <>
+      <div className="page hidden sm:block">
+        <div className="flex flex-col gap-5 pl-20">
+          {data.tasks?.map((item, index) => (
             <div
-              className={`flex items-center justify-between px-[48px] w-[60vw] h-20 border-2 rounded-full ${
-                bgColors[index % bgColors.length]
-              } ${borderColors[index % borderColors.length]}`}
+              key={index}
+              className="flex items-center justify-start gap-5 w-full"
             >
+              <p className="font-['Montserrat'] w-20">{item.time}</p>
               <div
-                className={`font-['Montserrat'] ${
-                  textColors[index % textColors.length]
-                } h-8 w-8 rounded-full flex items-center justify-center text-white`}
+                className={`flex items-center justify-between px-[48px] w-[60vw] h-20 border-2 rounded-full ${
+                  bgColors[index % bgColors.length]
+                } ${borderColors[index % borderColors.length]}`}
               >
-                {index + 1}
+                <div
+                  className={`font-['Montserrat'] ${
+                    textColors[index % textColors.length]
+                  } h-8 w-8 rounded-full flex items-center justify-center text-white`}
+                >
+                  {index + 1}
+                </div>
+                <h1 className="font-['Montserrat'] text-slate-800 font-bold truncate w-[30%] pl-2">
+                  {item.task}
+                </h1>
+                <p className="font-['Montserrat'] text-gray-500 font-semibold text-xs w-[170px] text-nowrap">{`${item.date} / ${item.month} / ${item.year}, ${item.day}`}</p>
               </div>
-              <h1 className="font-['Montserrat'] text-slate-800 font-bold truncate w-[30%] pl-2">
-                {item.task}
-              </h1>
-              <p className="font-['Montserrat'] text-gray-500 font-semibold text-xs w-[170px] text-nowrap">{`${item.date} / ${item.month} / ${item.year}, ${item.day}`}</p>
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
+      <div className="page sm:hidden flex flex-col gap-2">
+        {data.tasks?.map((item, index) => (
+          <>
+            <div className="flex items-center">
+              <p className="text-gray-500 text-sm font-['Montserrat'] w-20">
+                {item.time}
+              </p>
+              <div
+                className={`${
+                  mobileBgColors[index % mobileBgColors.length]
+                } h-9  w-[250px] rounded-full flex items-center justify-start px-4`}
+              >
+                <h1
+                  className="font-['Montserrat'] truncate text-white text-sm"
+                  key={index}
+                >
+                  {item.task}
+                </h1>
+              </div>
+            </div>
+          </>
         ))}
       </div>
-    </div>
+    </>
   );
 }
