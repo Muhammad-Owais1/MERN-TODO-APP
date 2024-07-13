@@ -74,10 +74,13 @@ export default function TaskPage() {
     <div className="page h-full">
       <div className="flex flex-col gap-5 pl-20">
         {data.tasks?.map((item, index) => (
-          <div key={index} className="flex items-center gap-5">
-            <p className="font-['Montserrat']">{item.time}</p>
+          <div
+            key={index}
+            className="flex items-center justify-start gap-5 w-full"
+          >
+            <p className="font-['Montserrat'] w-20">{item.time}</p>
             <div
-              className={`flex items-center justify-between px-12 w-[60vw] h-20 border-2 rounded-full ${
+              className={`flex items-center justify-between px-[48px] w-[60vw] h-20 border-2 rounded-full ${
                 bgColors[index % bgColors.length]
               } ${borderColors[index % borderColors.length]}`}
             >
@@ -88,7 +91,7 @@ export default function TaskPage() {
               >
                 {index + 1}
               </div>
-              <h1 className="font-['Montserrat'] text-slate-800 font-bold truncate w-[30%] sm:w-[40%] pl-2">
+              <h1 className="font-['Montserrat'] text-slate-800 font-bold truncate w-[30%] pl-2">
                 {item.task}
               </h1>
               <p className="font-['Montserrat'] text-gray-500 font-semibold text-xs w-[170px] text-nowrap">{`${item.date} / ${item.month} / ${item.year}, ${item.day}`}</p>
