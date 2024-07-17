@@ -13,7 +13,7 @@ export default function TaskPage() {
     if (user) {
       const fetchData = async () => {
         const res = await fetch(
-          `http://localhost:3000/api/task/gettask?id=${user._id}`,
+          `http://localhost:3000/api/task/gettasks?id=${user._id}`,
           {
             method: "GET",
           }
