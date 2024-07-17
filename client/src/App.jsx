@@ -10,6 +10,7 @@ import UserPage from "./page/UserPage";
 import LoginPage from "./page/LoginPage";
 import SignupPage from "./page/SignupPage";
 import UserInfo from "./components/UserInfo";
+import AboutTaskPage from "./page/AboutTaskPage";
 
 function App() {
   const [showLoading, setShowLoading] = useState(true);
@@ -24,6 +25,8 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
 
+  console.log(user);
+
   return (
     <>
       {showLoading ? (
@@ -35,8 +38,12 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/tasks" element={<TaskPage />} />
+              {user && (
+                <Route path="/tasks/task/:taskid" element={<AboutTaskPage />} />
+              )}
               <Route path="/addtask" element={<AddTaskPage />} />
-              if (!user) {<Route path="/user" element={<UserPage />} />}
+              {/* if (!user) {<Route path="/user" element={<UserPage />} />} */}
+              {!user && <Route path="/user" element={<UserPage />} />}
               <Route path={`/user/${user?._id}`} element={<UserPage />} />
               <Route path="/user/login" element={<LoginPage />} />
               <Route path="/user/signup" element={<SignupPage />} />

@@ -62,15 +62,16 @@ export default function TasksList({ data }) {
   }
 
   const reversedTasks = [...tasks].reverse();
-
   return (
     <>
       <div className="hidden sm:block pb-20">
         <div className="flex flex-col gap-5 pl-20">
           {reversedTasks.map((item, index) => (
-            <div
+            <Link
+              id={item.day}
+              to={`/tasks/task/${item._id}`}
               key={index}
-              className="flex items-center justify-start gap-5 w-full"
+              className={`flex items-center justify-start gap-5 w-full`}
             >
               <p className="font-['Montserrat'] w-20">{item.time}</p>
               <div
@@ -90,13 +91,17 @@ export default function TasksList({ data }) {
                 </h1>
                 <p className="font-['Montserrat'] text-gray-500 font-semibold text-xs w-[170px] text-nowrap">{`${item.date} / ${item.month} / ${item.year}, ${item.day}`}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
       <div className=" sm:hidden pl-2 flex flex-col gap-2">
         {reversedTasks.map((item, index) => (
-          <div className="flex items-center" key={index}>
+          <Link
+            to={`/tasks/task/${item._id}`}
+            className="flex items-center"
+            key={index}
+          >
             <p className="text-gray-500 text-sm font-['Montserrat'] w-20">
               {item.time}
             </p>
@@ -109,7 +114,7 @@ export default function TasksList({ data }) {
                 {item.task}
               </h1>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </>

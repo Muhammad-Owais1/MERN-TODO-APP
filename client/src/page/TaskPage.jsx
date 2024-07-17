@@ -45,16 +45,17 @@ export default function TaskPage() {
         <div className="flex flex-col sm:w-auto w-[90vw]">
           <div className="flex items-center justify-around mb-5">
             {week[0].map((item, index) => (
-              <div
+              <a
+                href={`#${week[1][index]}`}
                 key={index}
-                className="flex flex-col items-center justify-center gap-1 h-20 w-10  bg-orange-600 text-white rounded-full"
+                className="flex flex-col items-center justify-center gap-1 h-20 w-10 bg-transparent hover:bg-orange-600 text-gray-400 hover:text-white text-white rounded-full"
               >
                 <p className="font-bold font-['Montserrat'] ">{item}</p>
                 <p className="text-[8px] font-['Montserrat'] uppercase">
                   {week[1][index].slice(0, 3)}
                 </p>
                 <div className="h-1 w-1 bg-white rounded-full"></div>
-              </div>
+              </a>
             ))}
           </div>
           <div className="flex items-center">
