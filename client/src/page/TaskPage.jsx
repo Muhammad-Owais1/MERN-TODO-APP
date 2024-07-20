@@ -13,7 +13,7 @@ export default function TaskPage() {
     if (user) {
       const fetchData = async () => {
         const res = await fetch(
-          `http://localhost:3000/api/task/gettasks?id=${user._id}`,
+          `https://mern-todo-app-owais.vercel.app/api/task/gettasks?id=${user._id}`,
           {
             method: "GET",
           }

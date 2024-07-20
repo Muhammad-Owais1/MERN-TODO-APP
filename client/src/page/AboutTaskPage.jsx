@@ -8,7 +8,7 @@ export default function AboutTaskPage() {
   useEffect(() => {
     const fecthData = async (taskID) => {
       const response = await fetch(
-        `http://localhost:3000/api/task/gettask?taskID=${taskID}`
+        `https://mern-todo-app-owais.vercel.app/api/task/gettask?taskID=${taskID}`
       );
       const data = await response.json();
       setData(data);

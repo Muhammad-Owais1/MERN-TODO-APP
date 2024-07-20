@@ -28,22 +28,25 @@ export default function AddTaskForm({ user }) {
 
   const onSubmit = async (data) => {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:3000/api/task/addtask", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        ...data,
-        user: user._id,
-        time: time,
-        date: date,
-        day: day,
-        month: month,
-        year: year,
-      }),
-    });
+    const res = await fetch(
+      "https://mern-todo-app-owais.vercel.app/api/task/addtask",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          ...data,
+          user: user._id,
+          time: time,
+          date: date,
+          day: day,
+          month: month,
+          year: year,
+        }),
+      }
+    );
     const response = await res.json();
     await delay(2);
     console.log(response);
