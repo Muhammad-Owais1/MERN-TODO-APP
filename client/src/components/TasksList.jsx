@@ -95,7 +95,7 @@ export default function TasksList({ data }) {
           ))}
         </div>
       </div>
-      <div className=" sm:hidden pl-2 flex flex-col gap-2">
+      <div className=" sm:hidden pl-4 pb-20 flex flex-col gap-2">
         {reversedTasks.map((item, index) => (
           <Link
             to={`/tasks/task/${item._id}`}
@@ -108,7 +108,7 @@ export default function TasksList({ data }) {
             <div
               className={`${
                 mobileBgColors[index % mobileBgColors.length]
-              } h-9  w-[250px] rounded-full flex items-center justify-start px-4`}
+              } h-9  w-[60vw]  rounded-full flex items-center justify-start px-4`}
             >
               <h1 className="font-['Montserrat'] truncate text-white text-sm">
                 {item.task}

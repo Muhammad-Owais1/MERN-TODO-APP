@@ -48,7 +48,7 @@ export default function TaskPage() {
               <a
                 href={`#${week[1][index]}`}
                 key={index}
-                className="flex flex-col items-center justify-center gap-1 h-20 w-10 bg-transparent hover:bg-orange-600 text-gray-400 hover:text-white text-white rounded-full"
+                className="flex flex-col items-center justify-center gap-1 h-20 w-10 bg-transparent hover:bg-orange-600 text-gray-400 hover:text-white  rounded-full"
               >
                 <p className="font-bold font-['Montserrat'] ">{item}</p>
                 <p className="text-[8px] font-['Montserrat'] uppercase">

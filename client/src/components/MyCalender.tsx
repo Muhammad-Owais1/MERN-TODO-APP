@@ -25,7 +25,7 @@ export default function MyCalender() {
             font-weight: 600
           }
           .react-calendar {
-            border: none; /* Remove default border */
+            border: 2px solid black; /* Remove default border */
             
             width: 40vw !important;
           }

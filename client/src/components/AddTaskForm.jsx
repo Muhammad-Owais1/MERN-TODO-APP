@@ -65,14 +65,14 @@ export default function AddTaskForm({ user }) {
     >
       <input
         {...register("task", { required: true })}
-        className='focus:outline-none border-b-[1px] border-gray-950 h-8 w-[90%] font-["Montserrat"] px-1'
+        className='focus:outline-none border-b-2 border-blue-400 bg-transparent h-8 w-[90%] font-["Montserrat"] px-1'
         type="text"
         placeholder="Add Task"
         maxLength="50"
       />
       <select
         {...register("status")}
-        className='focus:outline-none bg-white border-b-[1px] border-gray-950 h-8 w-[90%] font-["Montserrat"] px-1'
+        className='focus:outline-none border-b-2 bg-transparent border-blue-400 h-8 w-[90%] font-["Montserrat"] px-1'
       >
         <option value="incomplete" className='font-["Montserrat"]'>
           Incomplete
@@ -88,7 +88,7 @@ export default function AddTaskForm({ user }) {
       /> */}
       <textarea
         {...register("description")}
-        className='resize-none focus:outline-none border-b-[1px] border-r-[1px] border-gray-950 h-40 w-[90%] font-["Montserrat"] px-1'
+        className='resize-none focus:outline-none border-b-2 border-r-2 bg-transparent border-blue-400 h-40 w-[90%] font-["Montserrat"] px-1'
         placeholder="Description"
         maxLength="400"
       ></textarea>

@@ -12,7 +12,7 @@ export default function UserPage() {
   //   navigate(`/user/${user._id}`);
   // }
   return (
-    <div className="page flex-col flex items-center justify-center gap-10">
+    <div className="flex-col flex items-center justify-center gap-10 pt-[150px] sm:pt-0 sm:h-full">
       {user ? <UserInfo user={user} /> : <UserButtons />}
     </div>
   );

@@ -11,6 +11,8 @@ import LoginPage from "./page/LoginPage";
 import SignupPage from "./page/SignupPage";
 import UserInfo from "./components/UserInfo";
 import AboutTaskPage from "./page/AboutTaskPage";
+import EditTaskPage from "./page/EditTaskPage";
+import MorePage from "./page/MorePage";
 
 function App() {
   const [showLoading, setShowLoading] = useState(true);
@@ -38,8 +40,15 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/tasks" element={<TaskPage />} />
+              <Route path="/more" element={<MorePage />} />
               {user && (
                 <Route path="/tasks/task/:taskid" element={<AboutTaskPage />} />
+              )}
+              {user && (
+                <Route
+                  path="/tasks/task/edit/:taskid"
+                  element={<EditTaskPage />}
+                />
               )}
               <Route path="/addtask" element={<AddTaskPage />} />
               {/* if (!user) {<Route path="/user" element={<UserPage />} />} */}
